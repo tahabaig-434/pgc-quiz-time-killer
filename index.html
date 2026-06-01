@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjab Group of College Quiz Time Killer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #ef4444;
+            --accent-hover: #dc2626;
+            --success-color: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #f43f5e, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            border: 1px solid #334155;
+        }
+
+        .zone-install {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* The Drag & Drop Button */
+        .bookmarklet-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: grab;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
+        }
+
+        .bookmarklet-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .bookmarklet-btn:active {
+            cursor: grabbing;
+        }
+
+        /* Secondary Action Button */
+        .action-btn {
+            background: transparent;
+            border: 1px solid #475569;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background: #273549;
+            border-color: #64748b;
+        }
+
+        ol {
+            text-align: left;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-color);
+        }
+
+        code {
+            background-color: #020617;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #fda4af;
+        }
+
+        pre {
+            background-color: #020617;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #1e293b;
+            position: relative;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            padding: 0;
+            background: none;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4rem;
+        }
+
+        .footer a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PGC Quiz Time Killer</h1>
+        <p class="subtitle">A specialized bookmarklet designed to halt background timers and interval loops on portal scripts.</p>
+    </header>
+
+    <main>
+        <div class="card zone-install">
+            <p><strong>Drag and drop</strong> the button below into your Bookmarks Bar:</p>
+            
+            <div class="btn-group">
+                <a class="bookmarklet-btn" id="bookmarkletLink" href="javascript:(function(){const masterId=setInterval(()=>{for(let i=1;i&lt;100000;i++){if(i!==masterId){clearTimeout(i);clearInterval(i);}}},100);alert('PGC Quiz Timer Suppressed!');})();" onclick="alert('Don\'t just click me! Drag me straight up into your bookmarks bar.'); return false;">
+                    🛑 PGC Quiz Time Killer
+                </a>
+
+                <button class="action-btn" id="copyBtn">📋 Copy Script to Clipboard</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>How to Setup & Run</h3>
+            <ol>
+                <li>Make sure your browser's Bookmarks Bar is visible (<code>Ctrl+Shift+B</code> or <code>Cmd+Shift+B</code>).</li>
+                <li>Drag the red <strong>PGC Quiz Time Killer</strong> button directly up into the bar.</li>
+                <li>Open your quiz portal page.</li>
+                <li>Click the bookmarklet from your bar to stop the active timer loops instantly.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Source Code Audit</h3>
+            <p>Review the unminified code implementation before saving it to your browser environment:</p>
+            <pre><code id="codeBlock">javascript:(function(){
+    const masterId = setInterval(() => {
+        for (let i = 1; i < 100000; i++) {
+            if (i !== masterId) {
+                clearTimeout(i);
+                clearInterval(i);
+            }
+        }
+    }, 100);
+    alert("PGC Quiz Timer Suppressed!");
+})();</code></pre>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>Created by <a href="https://github.com">Your GitHub Profile</a></p>
+    </div>
+</div>
+
+<script>
+    // Copy utility
+    document.getElementById('copyBtn').addEventListener('click', function() {
+        const rawCode = document.getElementById('bookmarkletLink').getAttribute('href');
+        navigator.clipboard.writeText(rawCode).then(() => {
+            this.textContent = '✅ Copied!';
+            this.style.borderColor = 'var(--success-color)';
+            setTimeout(() => {
+                this.textContent = '📋 Copy Script to Clipboard';
+                this.style.borderColor = '#475569';
+            }, 2000);
+        });
+    });
+</script>
+
+</body>
+</html>
